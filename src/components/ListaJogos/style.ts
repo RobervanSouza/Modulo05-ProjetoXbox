@@ -31,3 +31,14 @@ export const ListaJogoTodos = styled.div`
    
   
 `;
+export const Card = styled.div`
+  
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55rem;
+    transform: rotatey(-45px);
+    cursor: pointer;
+  
+`;
