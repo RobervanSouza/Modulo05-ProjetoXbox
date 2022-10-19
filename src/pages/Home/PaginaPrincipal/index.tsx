@@ -4,7 +4,7 @@ import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
 
 import Header from "../header/Header";
-import { Home1 } from "./style";
+import { Banner, Home1 } from "./style";
 
 
 const Home = () => {
@@ -14,17 +14,19 @@ const Home = () => {
       <div className="relative h-screen bg-gradient-to-b from-gray-900/10 lg:h-[140vh] ">
         <Header />
 
-        <main className="h-40 space-y-0.5">
-          <ListaJogo>
-            {Boolean(products.length) &&
-              products.map((product, index) =>(
-               <JogoItem 
-               product={product} 
-               key={`teste ${index}`}
-               onSelect={handleSelection}
-               />
-               ))}
-          </ListaJogo>
+        <main>
+          <Banner>
+            <ListaJogo>
+              {Boolean(products.length) &&
+                products.map((product, index) => (
+                  <JogoItem
+                    product={product}
+                    key={`teste ${index}`}
+                    onSelect={handleSelection}
+                  />
+                ))}
+            </ListaJogo>
+          </Banner>
           <section>
             {/* ação*/}
             {/* aventura */}
