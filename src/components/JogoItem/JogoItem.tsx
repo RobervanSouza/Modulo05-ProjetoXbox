@@ -35,7 +35,7 @@ function JogoItem({product, onSelect}: JogoItemProps) {
         <div>
           <A href={product.gameplay} target="_blank">
             {" "}
-            <Button>Game Play</Button>{" "}
+            <Button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100" />Game Play</Button>{" "}
           </A>
         </div>
       </JogoItemGamePlay>
