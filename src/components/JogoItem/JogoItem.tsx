@@ -9,7 +9,10 @@ import {
   JogoItemAno,
   JogoItemScore,
   JogoItemGamePlay,
-  JogoItemTreiler
+  JogoItemTreiler,
+  
+  A,
+  Button
 } from "./styles";
 import { products } from "mock/JogosItens";
 type JogoItemProps = {
@@ -23,11 +26,27 @@ function JogoItem({product, onSelect}: JogoItemProps) {
     <JogoItem1 role="listitem">
       <JogoItemImage src={product.image} />
       <JogoItemName>{product.name}</JogoItemName>
-      <JogoItemDescription>Descrição: {product.description}</JogoItemDescription>
+      <JogoItemDescription>
+        Descrição: {product.description}
+      </JogoItemDescription>
       <JogoItemCategoria>Categoria: {product.categoria}</JogoItemCategoria>
       <JogoItemAno>Ano do Jogo: {product.ano}</JogoItemAno>
-      <JogoItemGamePlay>Game Play: {product.gameplay}</JogoItemGamePlay>
-      <JogoItemTreiler>Trailer: {product.treiler}</JogoItemTreiler>
+      <JogoItemGamePlay>
+        <div>
+          <A href={product.gameplay} target="_blank">
+            {" "}
+            <Button>Game Play</Button>{" "}
+          </A>
+        </div>
+      </JogoItemGamePlay>
+      <JogoItemTreiler>
+        <div>
+          <A href={product.gameplay} target="_blank">
+            {" "}
+            <Button>Trayller</Button>{" "}
+          </A>
+        </div>
+      </JogoItemTreiler>
       <JogoItemScore>Score: {product.score}</JogoItemScore>
        fd495cbd13f7ed122e46c40aaef37b27c7372225
     </JogoItem1>

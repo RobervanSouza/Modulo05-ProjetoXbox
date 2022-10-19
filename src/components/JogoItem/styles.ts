@@ -9,15 +9,11 @@ export const JogoItem1 = styled.div`
   align-items: center;
   max-width: 200px;
   width: 100%;
+  margin-left: 2rem;
+  margin-top: 3rem;
   cursor: pointer;
   min-height: 225px;
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-  }
+ 
 `;
 
 export const JogoItemImage = styled.img`
@@ -68,6 +64,20 @@ export const JogoItemGamePlay = styled.small`
   font-size: 12px;
 `;
 
+export const A = styled.a`
+  width: 150px;
+  margin-top: 10px;
+`;
+
+export const Button = styled.button`
+  width: 70px;
+  height: 40px;
+  color: white;
+  background-color: #3cb371;
+  align-items: center;
+  font-size: 0.9rem;
+  border-radius: 2rem;
+`;
 /*
   <JogoItem1>
     <JogoItemImage>imagem</JogoItemImage>
