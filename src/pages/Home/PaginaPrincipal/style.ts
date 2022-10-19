@@ -8,3 +8,7 @@ export const Banner= styled.div`
 margin-top: -2rem;
 `;
 
+{
+  
+}
+

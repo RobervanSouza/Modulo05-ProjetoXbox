@@ -15,6 +15,11 @@ const Home = () => {
         <Header />
 
         <main>
+          <div className="card"> 
+            <div className="Circle"></div>
+            <div className="Circle2"></div>         
+          </div>
+          
           <Banner>
             <ListaJogo>
               {Boolean(products.length) &&
