@@ -54,5 +54,5 @@ height: 5rem;
 
 export const Teste = styled.button`
 margin-top: 35rem;
-margin-left: 15rem
+
 `;
