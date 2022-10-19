@@ -6,7 +6,6 @@ import { products } from "mock/JogosItens";
 import Header from "../header/Header";
 import { Banner, Home1 } from "./style";
 
-
 const Home = () => {
   const handleSelection = (product: Jogos)=>{}
   return (
@@ -33,11 +32,7 @@ const Home = () => {
             </ListaJogo>
           </Banner>
           <section>
-            {/* ação*/}
-            {/* aventura */}
-            {/* guerra */}
-            {/* mmo*/}
-            {/* minha lista*/}
+            
           </section>
         </main>
       </div>

@@ -48,7 +48,6 @@ function JogoItem({product, onSelect}: JogoItemProps) {
         </div>
       </JogoItemTreiler>
       <JogoItemScore>Score: {product.score}</JogoItemScore>
-      
     </JogoItem1>
 
   );

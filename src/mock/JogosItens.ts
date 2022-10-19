@@ -17,8 +17,8 @@ export const products: Jogos[] = [
   },
   {
     id: "507f191e810c19729de860ea",
-    name: "Gta",
-    categoria: "Guerra",
+    name: "açao",
+    categoria: "acao",
     description: "Jogo de luta e ação",
     image:
       "https://i.pinimg.com/736x/af/94/f9/af94f9c59728e094ecb4d17a6516099f.jpg",
@@ -29,8 +29,8 @@ export const products: Jogos[] = [
   },
   {
     id: "507f191e810c19729de860ea",
-    name: "Gta",
-    categoria: "Guerra",
+    name: "corrida",
+    categoria: "corrida",
     description: "Jogo de luta e ação",
     image:
       "https://i.pinimg.com/736x/af/94/f9/af94f9c59728e094ecb4d17a6516099f.jpg",
@@ -41,8 +41,8 @@ export const products: Jogos[] = [
   },
   {
     id: "507f191e810c19729de860ea",
-    name: "Gta",
-    categoria: "Guerra",
+    name: "luta",
+    categoria: "luta",
     description: "Jogo de luta e ação",
     image:
       "https://i.pinimg.com/736x/af/94/f9/af94f9c59728e094ecb4d17a6516099f.jpg",
@@ -53,8 +53,8 @@ export const products: Jogos[] = [
   },
   {
     id: "507f191e810c19729de860ea",
-    name: "Gta",
-    categoria: "Guerra",
+    name: "futebol",
+    categoria: "futebol",
     description: "Jogo de luta e ação",
     image:
       "https://i.pinimg.com/736x/af/94/f9/af94f9c59728e094ecb4d17a6516099f.jpg",
