@@ -11,13 +11,13 @@ export const ListaJogoHeader = styled.div`
   
 `;
 
-export const ListaJogoTitle = styled.h1`
- color: red;
-  
+export const ListaJogoTitle = styled.div`
+ margin-top: 3rem;
+
 `;
 
 export const ListaJogoSelect = styled.select`
- 
+ margin-left: 3rem;
 `;
 
 export const ListaJogoTodos = styled.div`
@@ -31,7 +31,7 @@ export const ListaJogoTodos = styled.div`
   
 `;
 export const Card = styled.div`
-  
+    margin-left: 3rem;
     display: flex;
     margin-top: 3rem;
     flex-direction: row;
@@ -40,4 +40,19 @@ export const Card = styled.div`
     transform: rotatey(-45px);
     cursor: pointer;
   
+`;
+export const Categoria = styled.button`
+
+`;
+export const Button = styled.button`
+color: white;
+
+background-color: green;
+width: 5rem;
+height: 5rem;
+`;
+
+export const Teste = styled.button`
+margin-top: 35rem;
+margin-left: 15rem
 `;

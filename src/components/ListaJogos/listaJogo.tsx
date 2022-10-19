@@ -3,7 +3,7 @@ import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
 import React, { Children, useState } from "react";
 import { getEnabledCategories } from "trace_events";
-import { Card, ListaJogoHeader, ListaJogoTitle, ListaJogoTodos } from "./style";
+import { Button, Card, Categoria, ListaJogoHeader, ListaJogoTitle, ListaJogoTodos, Teste } from "./style";
 
 interface ListaJogoProps {
   children: React.ReactNode;
@@ -21,62 +21,69 @@ function ListaJogo({ children }: ListaJogoProps) {
   }
   return (
     <section>
-          <ListaJogoHeader>
-            <ListaJogoTodos>{children}</ListaJogoTodos>
-          </ListaJogoHeader>
+      <ListaJogoHeader>
+        <ListaJogoTodos>{children}</ListaJogoTodos>
+      </ListaJogoHeader>
       <ListaJogoTitle>
         <div>
-          <button
-            onClick={() => {
-              filtrarPorCategoria("Guerra");
-            }}
-          >
-            {" "}
-            Guerra{" "}
-          </button>
-          <button
-            onClick={() => {
-              filtrarPorCategoria("acao");
-            }}
-          >
-            {" "}
-            acao{" "}
-          </button>
-          <button
-            onClick={() => {
-              filtrarPorCategoria("corrida");
-            }}
-          >
-            {" "}
-            corrida{" "}
-          </button>
-          <button
-            onClick={() => {
-              filtrarPorCategoria("luta");
-            }}
-          >
-            {" "}
-            luta{" "}
-          </button>
-          <button
-            onClick={() => {
-              filtrarPorCategoria("futebol");
-            }}
-          >
-            {" "}
-            futebol{" "}
-          </button>
+          <Categoria>
+            <Button
+              onClick={() => {
+                filtrarPorCategoria("luta");
+              }}
+            >
+              {" "}
+              luta{" "}
+            </Button>
+            <Button
+              onClick={() => {
+                filtrarPorCategoria("acao");
+              }}
+            >
+              {" "}
+              acao{" "}
+            </Button>
+            <Button
+              onClick={() => {
+                filtrarPorCategoria("corrida");
+              }}
+            >
+              {" "}
+              corrida{" "}
+            </Button>
+
+            <Button
+              onClick={() => {
+                filtrarPorCategoria("futebol");
+              }}
+            >
+              {" "}
+              futebol{" "}
+              
+            </Button>
+          </Categoria>
         </div>
       </ListaJogoTitle>
-      <div>
-        <Card>
-          {produtos.map((products) => (
-            <div>
-              <JogoItem product={products} onSelect={handleSelection} />
-            </div>
-          ))}
-        </Card>
-      </div>
+      <Teste>
+        <Button
+          onClick={() => {
+            filtrarPorCategoria("Guerra");
+          }}
+        >
+          {" "}
+          Guerra
+          {<div>
+            <Card>
+              {produtos.map((products) => (
+                <div>
+                  <JogoItem product={products} onSelect={handleSelection} />
+                </div>
+              ))}
+            </Card>
+          </div> }
+          
+        </Button>
+      </Teste>
     </section>
   );
 }
