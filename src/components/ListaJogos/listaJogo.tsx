@@ -25,7 +25,9 @@ function ListaJogo({ children }: ListaJogoProps) {
         <ListaJogoTodos>{children}</ListaJogoTodos>
       </ListaJogoHeader>
       <ListaJogoTitle>
+        
         <div>
+          
           <Categoria>
             <Button
               onClick={() => {
@@ -61,31 +63,65 @@ function ListaJogo({ children }: ListaJogoProps) {
               futebol{" "}
               
             </Button>
+
+            <Button
+              onClick={() => {
+                filtrarPorCategoria("Guerra");
+              }}
+            >
+              {" "}
+              Guerra{" "}
+              
+            </Button>
+            <Teste>
+
+
+  {<div>
+    <Card>
+      {produtos.map((products) => (
+        <div>
+          <JogoItem product={products} onSelect={handleSelection} />
+        </div>
+      ))}
+    </Card>
+  </div> }
+  
+
+</Teste>
+            
           </Categoria>
         </div>
       </ListaJogoTitle>
-      <Teste>
-        <Button
-          onClick={() => {
-            filtrarPorCategoria("Guerra");
-          }}
-        >
-          {" "}
-          Guerra
-          {<div>
-            <Card>
-              {produtos.map((products) => (
-                <div>
-                  <JogoItem product={products} onSelect={handleSelection} />
-                </div>
-              ))}
-            </Card>
-          </div> }
-          
-        </Button>
-      </Teste>
+
     </section>
   );
 }
 
 export default ListaJogo;
+
+
+
+
+
+
+
+/*<Teste>
+<Button
+  onClick={() => {
+    filtrarPorCategoria("Resultado de Pesquisa");
+  }}
+>
+  {" "}
+  Resultado de Pesquisa
+  {<div>
+    <Card>
+      {produtos.map((products) => (
+        <div>
+          <JogoItem product={products} onSelect={handleSelection} />
+        </div>
+      ))}
+    </Card>
+  </div> }
+  
+</Button>
+</Teste>*/
