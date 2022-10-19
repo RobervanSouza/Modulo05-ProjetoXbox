@@ -7,8 +7,8 @@ function JogoItem() {
     <JogoItem1>
       <JogoItemImage src="" />
       <JogoItemName> nome do jogo</JogoItemName>
-      <JogoItemPrice> wewewe</JogoItemPrice>
-      <JogoItemDescription>dadsasdadas</JogoItemDescription>
+      <JogoItemPrice> anos</JogoItemPrice>
+      <JogoItemDescription>descrição</JogoItemDescription>
     </JogoItem1>
   );
 }

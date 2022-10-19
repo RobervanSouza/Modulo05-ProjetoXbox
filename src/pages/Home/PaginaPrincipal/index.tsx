@@ -23,7 +23,7 @@ const Home = () => {
         
         </section>
       </main>
-      {/* modal */}
+      
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import Home from "pages/Home/principal";
+import Home from "pages/Home/PaginaPrincipal";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { RoutePath } from "./Router/routes";

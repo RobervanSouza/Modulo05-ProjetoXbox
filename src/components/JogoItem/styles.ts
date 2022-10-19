@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const JogoItem1 = styled.div`
     
-    background: aqua;
+    background: blue;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
