@@ -12,8 +12,7 @@ export const ListaJogoHeader = styled.div`
 `;
 
 export const ListaJogoTitle = styled.h1`
- 
-    margin: auto;
+ color: red;
   
 `;
 
