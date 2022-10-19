@@ -8,23 +8,26 @@ import { Home1 } from "./style";
 
 const Home = () => {
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 lg:h-[140vh] ">
-      <Header />
-      <main className="h-40 space-y-0.5">
-        <ListaJogo>
-          <JogoItem />
-        </ListaJogo>
-        <section>
-          {/* ação*/}
-          {/* aventura */}
-          {/* guerra */}
-          {/* mmo*/}
-          {/* minha lista*/}
+    <Home1>
+      <div className="relative h-screen bg-gradient-to-b from-gray-900/10 lg:h-[140vh] ">
+        <Header />
         
-        </section>
-      </main>
-      
-    </div>
+        <main className="h-40 space-y-0.5">
+          <ListaJogo>
+            <JogoItem />
+          </ListaJogo>
+          <section>
+          
+        
+            {/* ação*/}
+            {/* aventura */}
+            {/* guerra */}
+            {/* mmo*/}
+            {/* minha lista*/}
+          </section>
+        </main>
+      </div>
+    </Home1>
   );
 };
 export default Home;

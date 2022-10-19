@@ -55,3 +55,5 @@ export const JogoItemDescription = styled.small`
     font-size: 12px;
   
 `;
+
+
