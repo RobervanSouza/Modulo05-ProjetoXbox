@@ -1,31 +1,33 @@
-import Iframe from "react-iframe";
+import {Jogos} from "../../components/TodosJogos/Interface"
 import React from "react";
 import {
   JogoItem1,
   JogoItemDescription,
   JogoItemImage,
   JogoItemName,
-  JogoItemPrice,
+  JogoItemCategoria,
+  JogoItemAno,
+  JogoItemScore,
+  JogoItemGamePlay,
+  JogoItemTreiler
 } from "./styles";
+import { products } from "mock/JogosItens";
+type JogoItemProps = {
+       product: Jogos
+       onSelect:(data: Jogos) => void
+}
 
-function JogoItem() {
+function JogoItem({product, onSelect}: JogoItemProps) {
   return (
-    <JogoItem1>
-      <JogoItemImage></JogoItemImage>
-      <JogoItemName> nome do jogo</JogoItemName>
-      <JogoItemPrice> anos</JogoItemPrice>
-      <JogoItemDescription>
-        <Iframe
-          url="http://www.youtube.com/embed/xDMP3i36naA"
-          position="absolute"
-          width="100%"
-          
-          id="myId"
-          className="myClassname"
-          height="100%"
-          styles={{ height: "455px" }}
-        />
-      </JogoItemDescription>
+    <JogoItem1 role="listitem">
+      <JogoItemImage src={product.image} />
+      <JogoItemName>{product.name}</JogoItemName>
+      <JogoItemDescription>Descrição: {product.description}</JogoItemDescription>
+      <JogoItemCategoria>Categoria: {product.categoria}</JogoItemCategoria>
+      <JogoItemAno>Ano do Jogo: {product.ano}</JogoItemAno>
+      <JogoItemGamePlay>Game Play: {product.gameplay}</JogoItemGamePlay>
+      <JogoItemTreiler>Trailer: {product.treiler}</JogoItemTreiler>
+      <JogoItemScore>Score: {product.score}</JogoItemScore>
     </JogoItem1>
   );
 }
