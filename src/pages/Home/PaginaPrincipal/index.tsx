@@ -21,14 +21,7 @@ const Home = () => {
           
           <Banner>
             <ListaJogo>
-              {Boolean(products.length) &&
-                products.map((product, index) => (
-                  <JogoItem
-                    product={product}
-                    key={`teste ${index}`}
-                    onSelect={handleSelection}
-                  />
-                ))}
+             
             </ListaJogo>
           </Banner>
           <section>
