@@ -45,16 +45,19 @@ export const Card = styled.div`
 export const Categoria = styled.div`
 padding: 2rem;
 justify-content: space-between;
-display: flex;
+
+
 
 
 `;
 export const Button = styled.button`
 color: white;
-background-color: green;
+background-color: #90ee90;
 width: 5rem;
 height: 5rem;
-display: flex ;
+display: block ;
+border: none;
+font-size: 2rem;
 
 
 
@@ -63,7 +66,7 @@ display: flex ;
 export const Teste = styled.div`
 margin-top: 2rem;
 margin-left: 2rem;
-background-color: #90ee90;
+
 
 
 

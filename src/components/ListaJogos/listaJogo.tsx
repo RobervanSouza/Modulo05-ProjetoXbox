@@ -73,23 +73,22 @@ function ListaJogo({ children }: ListaJogoProps) {
               Guerra{" "}
               
             </Button>
+
             <Teste>
 
-
-  {<div>
-    <Card>
-      {produtos.map((products) => (
-        <div>
-          <JogoItem product={products} onSelect={handleSelection} />
-        </div>
-      ))}
-    </Card>
-  </div> }
-  
+{<div>
+  <Card>
+    {produtos.map((products) => (
+      <div>
+        <JogoItem product={products} onSelect={handleSelection} />
+      </div>
+  ))}
+  </Card>
+</div> }  
 
 </Teste>
             
-          </Categoria>
+      </Categoria>
         </div>
       </ListaJogoTitle>
 
