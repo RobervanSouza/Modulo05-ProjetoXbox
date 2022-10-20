@@ -3,7 +3,7 @@ import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
 import React, { Children, useState } from "react";
 import { getEnabledCategories } from "trace_events";
-import { Button, Card, Categoria, ListaJogoHeader, ListaJogoTitle, ListaJogoTodos, Teste } from "./style";
+import { Button, Card, Categoria, ListaJogoHeader, ListaJogoTitle, ListaJogoTodos, } from "./style";
 
 interface ListaJogoProps {
   children: React.ReactNode;
@@ -73,8 +73,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               Guerra{" "}
               
             </Button>
-
-            <Teste>
+            
 
 {<div>
   <Card>
@@ -86,7 +85,7 @@ function ListaJogo({ children }: ListaJogoProps) {
   </Card>
 </div> }  
 
-</Teste>
+
             
       </Categoria>
         </div>

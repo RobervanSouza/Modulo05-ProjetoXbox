@@ -58,16 +58,14 @@ height: 5rem;
 display: block ;
 border: none;
 font-size: 2rem;
-
-
-
 `;
+
+
+
 
 export const Teste = styled.div`
 margin-top: 2rem;
 margin-left: 2rem;
-
-
-
+background-color: #90ee90;
 
 `;

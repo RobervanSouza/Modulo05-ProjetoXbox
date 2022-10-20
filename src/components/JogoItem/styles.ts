@@ -78,6 +78,12 @@ export const Button = styled.button`
   font-size: 0.9rem;
   border-radius: 2rem;
 `;
+
+export const Imagem = styled.div`
+width: 20%;
+  
+`;
+
 /*
   <JogoItem1>
     <JogoItemImage>imagem</JogoItemImage>
