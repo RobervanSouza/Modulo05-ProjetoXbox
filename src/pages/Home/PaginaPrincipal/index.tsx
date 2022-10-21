@@ -16,6 +16,7 @@ const Home = () => {
         <main>
           <div className="card"> 
             <div className="Circle"></div>
+            <h1>teste de commit pra resolver erro</h1>
             <div className="Circle2"></div>         
           </div>
           
