@@ -7,6 +7,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path={RoutePath.HOME} element={<Home />} />
+      <Route path={RoutePath.LOGIN} element={<Home />} />
     </Routes>
   );
 };

@@ -70,13 +70,14 @@ export const A = styled.a`
 `;
 
 export const Button = styled.button`
-  width: 70px;
+  cursor: pointer;
+  width: 80px;
   height: 40px;
   color: white;
-  background-color: #3cb371;
+
   align-items: center;
   font-size: 0.9rem;
-  border-radius: 2rem;
+  border-radius: .4rem;
 `;
 
 export const Imagem = styled.div`

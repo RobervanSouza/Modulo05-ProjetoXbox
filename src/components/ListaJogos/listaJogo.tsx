@@ -25,10 +25,16 @@ function ListaJogo({ children }: ListaJogoProps) {
         <ListaJogoTodos>{children}</ListaJogoTodos>
       </ListaJogoHeader>
       <ListaJogoTitle>
-        
         <div>
-          
           <Categoria>
+            <Button
+              onClick={() => {
+                definirProdutos(products);
+              }}
+            >
+              {" "}
+              Todos {" "}
+            </Button>
             <Button
               onClick={() => {
                 filtrarPorCategoria("luta");
@@ -39,11 +45,11 @@ function ListaJogo({ children }: ListaJogoProps) {
             </Button>
             <Button
               onClick={() => {
-                filtrarPorCategoria("acao");
+                filtrarPorCategoria("Ação");
               }}
             >
               {" "}
-              acao{" "}
+              Ação{" "}
             </Button>
             <Button
               onClick={() => {
@@ -61,7 +67,6 @@ function ListaJogo({ children }: ListaJogoProps) {
             >
               {" "}
               futebol{" "}
-              
             </Button>
 
             <Button
@@ -71,26 +76,22 @@ function ListaJogo({ children }: ListaJogoProps) {
             >
               {" "}
               Guerra{" "}
-              
             </Button>
-            
 
-{<div>
-  <Card>
-    {produtos.map((products) => (
-      <div>
-        <JogoItem product={products} onSelect={handleSelection} />
-      </div>
-  ))}
-  </Card>
-</div> }  
-
-
-            
-      </Categoria>
+            {
+              <div>
+                <Card>
+                  {produtos.map((products) => (
+                    <div>
+                      <JogoItem product={products} onSelect={handleSelection} />
+                    </div>
+                  ))}
+                </Card>
+              </div>
+            }
+          </Categoria>
         </div>
       </ListaJogoTitle>
-
     </section>
   );
 }
@@ -98,7 +99,7 @@ function ListaJogo({ children }: ListaJogoProps) {
 export default ListaJogo;
 
 
-
+ 
 
 
 

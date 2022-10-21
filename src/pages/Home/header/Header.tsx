@@ -31,9 +31,9 @@ function Header() {
             />
             <ul>
               <li className="linkHeader">Home</li>
-              <li className="linkHeader">Jogos</li>
-              <li className="linkHeader">Minha Lista</li>
-              <li className="linkHeader">Populares</li>
+              <li className="linkHeader">Fazer login</li>
+              <li className="linkHeader">Cadastrar</li>
+             
             </ul>
           </Cabecalho>
           <div></div>
