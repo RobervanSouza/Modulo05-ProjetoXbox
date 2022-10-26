@@ -1,36 +1,36 @@
+import { AuthProvider } from "Auth/Context/AuthContext";
 import JogoItem from "components/JogoItem/JogoItem";
 import ListaJogo from "components/ListaJogos/listaJogo";
 import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
+import { Login } from "pages/login/Login";
 
 import Header from "../header/Header";
 import { Banner, Home1 } from "./style";
 
 const Home = () => {
-  const handleSelection = (product: Jogos)=>{}
+  const handleSelection = (product: Jogos) => {};
   return (
-    <Home1>
-      <div className="relative h-screen bg-gradient-to-b from-gray-900/10 lg:h-[140vh] ">
-        <Header />
+    <AuthProvider>
+      <Login>
+        <Home1>
+          <div>
+            <Header />
 
-        <main>
-          <div className="card"> 
-            <div className="Circle"></div>
-            <h1>teste de commit pra resolver erro</h1>
-            <div className="Circle2"></div>         
+            <main>
+              <div className="card"></div>
+
+              <Banner>
+                <ListaJogo>
+
+                </ListaJogo>
+              </Banner>
+              <section></section>
+            </main>
           </div>
-          
-          <Banner>
-            <ListaJogo>
-             
-            </ListaJogo>
-          </Banner>
-          <section>
-            
-          </section>
-        </main>
-      </div>
-    </Home1>
+        </Home1>
+      </Login>
+    </AuthProvider>
   );
 };
 export default Home;

@@ -58,3 +58,13 @@ export const Cabecalho = styled.div`
   }
 `;
 
+export const MenuItemLogout = styled.button`
+
+    z-index: 1;
+  
+`;
+
+export const Logout1 = styled.div`
+margin-left: 3rem;
+  
+`;
