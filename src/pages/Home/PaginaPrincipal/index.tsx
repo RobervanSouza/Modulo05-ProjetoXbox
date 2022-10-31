@@ -1,9 +1,10 @@
 import { AuthProvider } from "Auth/Context/AuthContext";
-import JogoItem from "components/JogoItem/JogoItem";
+
 import ListaJogo from "components/ListaJogos/listaJogo";
 import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
 import { Login } from "pages/login/Login";
+
 
 import Header from "../header/Header";
 import { Banner, Home1 } from "./style";
@@ -11,8 +12,10 @@ import { Banner, Home1 } from "./style";
 const Home = () => {
   const handleSelection = (product: Jogos) => {};
   return (
-    <AuthProvider>
-      <Login>
+ 
+        <Login>
+
+
         <Home1>
           <div>
             <Header />
@@ -29,8 +32,10 @@ const Home = () => {
             </main>
           </div>
         </Home1>
-      </Login>
-    </AuthProvider>
+ 
+    
+    
+        </Login>
   );
 };
 export default Home;

@@ -4,11 +4,7 @@ import { AppBar, CardActions, Container, Grid, IconButton, Toolbar, Typography }
 
 import { favoritoContext } from "./FavoritoContext";
 import { useContext } from "react";
-
-
-
-import JogoItem from "components/JogoItem/JogoItem";
-
+import { JogosItem } from "components/JogoItem/JogoItem";
 import { Jogos } from "components/TodosJogos/Interface";
 
 type FavoriteScreenProps = {
@@ -17,7 +13,7 @@ type FavoriteScreenProps = {
 };
  const FavoriteScreen =  () => {
   const { favorites, setFavorites } = useContext(favoritoContext);
-     const handleSelection = (product: Jogos) => {};
+     const handleSelection = (product: Jogos) => {}
   return (
     <div>
       <AppBar position="static">
@@ -39,7 +35,7 @@ type FavoriteScreenProps = {
           <Grid container spacing={2}>
             {favorites?.map((products) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={products.name}>
-                <JogoItem product={products} onSelect={handleSelection} />
+                <JogosItem product={products} onSelect={handleSelection} />
               </Grid>
             ))}
           </Grid>

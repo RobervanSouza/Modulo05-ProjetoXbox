@@ -10,12 +10,15 @@ import React, {
 import { AuthService } from "../Service/AuthService";
 
 interface IAuthContextData {
+  cadastrar: (email: string, password: string) => string |void;
   logout: () => void;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<string | void>;
 }
 
-const AuthContext = createContext({} as IAuthContextData);
+
+
+ export const  AuthContext = createContext({} as IAuthContextData);
 
 const LOCAL_STORAGE_KEY__ACCESS_TOKEN = "APP_ACCESS_TOKEN";
 
@@ -23,21 +26,31 @@ interface IAuthProviderProps {
   children: React.ReactNode;
 }
 export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
-  const [accessToken, setAcessToken] = useState<string>();
+  const [accessToken, setAcessToken,] = useState<string>();
+  
+  const [user, setUser] = useState();
+  const [email, setEmail] = useState();
 
   useEffect(() => {
-    const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
+    const userToken = localStorage.getItem("user_token");
+    const usersStorage = localStorage.getItem("users_bd");
 
-    if (accessToken) {
-      setAcessToken(accessToken);
-    } else {
-      setAcessToken(undefined);
+    if (userToken && usersStorage) {
+      const hasUser = JSON.parse(usersStorage)?.filter(
+        (user:any ) => user.email === JSON.parse(userToken).email
+      );
+
+      if (hasUser) setUser(hasUser[0]);
+      console.log(hasUser,"testet")
     }
   }, []);
 
+
+
+  
   const handleLogin = useCallback(async (email: string, password: string) => {
     const result = await AuthService.auth(email, password);
-    console.log(result)
+    console.log(result, "teste")
     if (result instanceof Error) {
       return result.message;
     } else {
@@ -46,27 +59,61 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
         LOCAL_STORAGE_KEY__ACCESS_TOKEN,
 
    "teste"
-        
-
       );
       
       setAcessToken(result.accessToken);
     }
+   
   }, []);
+
+
+
   const handleLogout = useCallback(() => {
     localStorage.removeItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
     setAcessToken(undefined);
   }, []);
+  
+   const cadastrar = (email:any,  password:any) => {
+     const usersStorage = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
+  
+     const userarray = usersStorage? JSON.parse(usersStorage):[]
+
+     const usuario = userarray?.filter((user: any) => user.email === email);
+ console.log(email, "email")
+     if (usuario?.length) {
+       if (usuario[0].email === email && usuario[0].password === password) {
+         const token = Math.random().toString(36).substring(2);
+         localStorage.setItem("user_token", JSON.stringify({ email, token }));
+        
+   //     setEmail({ email, password });
+         
+         return;
+       } else {
+         return "E-mail ou senha incorretos";
+       }
+     } else {
+       return "Usuário não cadastrado";
+     }
+   };
+   
 
   // recupera use token, useMemo !! negar o valor da string e igual acessToken !== undefined
   const isAuthenticated = useMemo(() => !!accessToken, [accessToken]);
 
+    
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login: handleLogin, logout: handleLogout }}
+      value={{
+        isAuthenticated,
+        login: handleLogin,
+        logout: handleLogout,
+        cadastrar,
+      }}
     >
       {children}
     </AuthContext.Provider>
   );
 };
+
+
 export const useAuthContext = () => useContext(AuthContext);

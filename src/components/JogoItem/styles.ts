@@ -13,7 +13,13 @@ export const JogoItem1 = styled.div`
   margin-top: 3rem;
   cursor: pointer;
   min-height: 225px;
- 
+  div {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 export const JogoItemImage = styled.img`

@@ -7,11 +7,12 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "Auth/Context/AuthContext";
 import React, { useState } from "react";
-import { Box1, Box2, Box3 } from "./style";
+import { Box1, Box2, Box3, Card1, LabelSignup, Strong } from "./style";
 import * as yup from 'yup';
+import { RoutePath } from "Router/routes";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email().required(),
@@ -28,9 +29,8 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-
+const navigate = useNavigate();
 const handleSubmit = () => {
-
   loginSchema
   .validate({ email, password },{ abortEarly: false} )
   .then((dadosValidados) => {
@@ -48,6 +48,7 @@ const handleSubmit = () => {
       }
     });
   });
+
 }
 
   if (isAuthenticated) {
@@ -56,21 +57,23 @@ const handleSubmit = () => {
 
   return (
     <Box1>
-      <Card>
+      <Card1>
+        <div>
         <CardContent>
           <Box3>
-            <Typography>Identifique-se</Typography>
+            <Typography>Faça Login</Typography>
 
             <TextField
               fullWidth
               label="Email"
               type="Email"
+              
               value={email}
               error={!!emailError}
               helperText={emailError}
               onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={e => setEmailError('')}
-            />
+              onKeyDown={(e) => setEmailError("")}
+              />
             <TextField
               fullWidth
               label="Senha"
@@ -79,8 +82,8 @@ const handleSubmit = () => {
               error={!!passwordError}
               helperText={passwordError}
               onChange={(e) => setPassword(e.target.value)}
-              onKeyDown={e => setPasswordError('')}
-            />
+              onKeyDown={(e) => setPasswordError("")}
+              />
           </Box3>
         </CardContent>
         <CardActions>
@@ -90,7 +93,14 @@ const handleSubmit = () => {
             </Button>
           </Box2>
         </CardActions>
-      </Card>
+      <LabelSignup>
+        Não tem uma conta?
+        <Strong>
+          <Link to="/Cadastrar">&nbsp;Registre-se</Link>
+        </Strong>
+      </LabelSignup>
+              </div>
+      </Card1>
     </Box1>
   );
 };

@@ -1,4 +1,4 @@
-import JogoItem from "components/JogoItem/JogoItem";
+import {JogosItem} from "components/JogoItem/JogoItem";
 import { Jogos } from "components/TodosJogos/Interface";
 import { products } from "mock/JogosItens";
 import React, { Children, useState } from "react";
@@ -83,7 +83,7 @@ function ListaJogo({ children }: ListaJogoProps) {
                 <Card>
                   {produtos.map((products) => (
                     <div>
-                      <JogoItem product={products} onSelect={handleSelection} />
+                      <JogosItem product={products} onSelect={handleSelection} />
                     </div>
                   ))}
                 </Card>
