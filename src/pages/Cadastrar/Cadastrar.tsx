@@ -35,7 +35,7 @@ const loginSchema = yup.object().shape({
 
 
     alert("Usuário cadatrado com sucesso!");
-    navigate("/Login");
+    navigate("/");
 
     
   };

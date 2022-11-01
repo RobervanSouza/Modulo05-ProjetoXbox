@@ -74,26 +74,13 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
   }, []);
   
    const cadastrar = (email:any,  password:any) => {
-     const usersStorage = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
+     const usersStorage = localStorage.getItem("user_token");
   
      const userarray = usersStorage? JSON.parse(usersStorage):[]
 
      const usuario = userarray?.filter((user: any) => user.email === email);
  console.log(email, "email")
-     if (usuario?.length) {
-       if (usuario[0].email === email && usuario[0].password === password) {
-         const token = Math.random().toString(36).substring(2);
-         localStorage.setItem("user_token", JSON.stringify({ email, token }));
-        
-   //     setEmail({ email, password });
-         
-         return;
-       } else {
-         return "E-mail ou senha incorretos";
-       }
-     } else {
-       return "Usuário não cadastrado";
-     }
+  
    };
    
 
