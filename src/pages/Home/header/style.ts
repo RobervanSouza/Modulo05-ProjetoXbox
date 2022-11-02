@@ -82,3 +82,9 @@ background-color: red;
   margin-right: 10rem;
 `;
 
+export const Cadastrar = styled.button`
+  margin-left: 1rem;
+
+  margin-right: 10rem;
+`;
+

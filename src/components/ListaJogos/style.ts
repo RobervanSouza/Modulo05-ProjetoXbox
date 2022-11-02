@@ -30,30 +30,34 @@ export const ListaJogoTodos = styled.div`
   flex-wrap: wrap;
 `;
 export const Card = styled.div`
+
   display: flex;
   margin-top: 3rem;
   flex-direction: row;
-  justify-content: space-between;
-  width: 55rem;
-  transform: rotatey(-45px);
-  cursor: pointer;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+ 
+
 `;
 export const Categoria = styled.div`
-  margin-left: 23rem;
-  flex-direction: column;
- cursor: pointer;
- background-color: red;
+  margin-top: 3rem;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
 `;
 export const Button = styled.button`
-color: white;
-background-color: red;
-width: 5rem;
-height: 5rem;
-display: block ;
-border: none;
-font-size: 2rem;
-cursor: pointer;
-flex-direction: column;
+  margin-left: 3rem;
+  color: white;
+  background-color: blue;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  
 `;
 
 

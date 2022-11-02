@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "Auth/Context/AuthContext";
+import { FavoritoProvider } from "Favoritos/contexts/FavoritoContext";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
@@ -10,10 +11,13 @@ function App() {
     <AuthProvider>
 
     <BrowserRouter>
+    <FavoritoProvider>
+
       <QueryClientProvider client={queryClient}>
 
       <Router />
       </QueryClientProvider>
+    </FavoritoProvider>
     </BrowserRouter>
     </AuthProvider>
   );

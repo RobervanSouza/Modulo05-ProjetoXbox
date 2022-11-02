@@ -3,6 +3,6 @@ export enum RoutePath {
   HOME = "/",
   LOGIN = "/login",
 
-  CADASTRAR_JOGOS = "/cadastar editar usuarios",
+  CADASTRAR_JOGOS = "/cadastrarJogos",
   FAVORITOS = "/favoritos",
 }

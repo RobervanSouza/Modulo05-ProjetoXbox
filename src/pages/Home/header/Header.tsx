@@ -10,11 +10,12 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { RoutePath } from "Router/routes";
 import { ReactComponent as Logout } from "assets/icons/logout.svg";
-import { BotãoSair, Cabecalho, Favorito, ImgLogo, Logout1, MenuItemLogout, Pagina } from "./style";
+import { BotãoSair, Cabecalho, Cadastrar, Favorito, ImgLogo, Logout1, MenuItemLogout, Pagina } from "./style";
 import { AuthProvider, useAuthContext } from "Auth/Context/AuthContext";
-import { Favorite } from "@mui/icons-material";
+import { AddTask, Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { favoritoContext } from "Favoritos/contexts/FavoritoContext";
+import CadastrarJogos from "pages/CadastrarJogos/CadastrarJogos";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +41,14 @@ function Header() {
 
   const favoritescont = favorites.length;
 
-   const navigate = useNavigate();
+   const favorito = useNavigate();
   function handleclick() {
-    navigate(`/favoritos`);
+    favorito(`/favoritos`);
   }
-
+   const cadastrar = useNavigate();
+  function click() {
+    cadastrar(`/cadastrarJogos`);
+  }
   return (
     <header className={`${isScrolled && "bg-red-500"}`}>
       <AuthProvider>
@@ -66,16 +70,29 @@ function Header() {
                     size="large"
                     aria-label="show more"
                     aria-haspopup="true"
-                    onClick={() => navigate(`/favoritos`)}
+                    onClick={() => favorito(`/favoritos`)}
                     color="inherit"
                   >
-      
-                  <Badge badgeContent={favoritescont} color="secondary">
-                    <Favorite />
-                  </Badge>
+                    <Badge badgeContent={favoritescont} color="secondary">
+                      <Favorite />
+                    </Badge>
                   </IconButton>
                 </div>
               </Favorito>
+              <Cadastrar>
+                <IconButton
+                  size="large"
+                  aria-label="show more"
+                  aria-haspopup="true"
+                  onClick={() => cadastrar(`/cadastrarJogos`)}
+                  color="inherit"
+                >
+                  <Badge>
+                    <AddTask />
+                  </Badge>
+                  &nbsp;cadastrar
+                </IconButton>
+              </Cadastrar>
             </Cabecalho>
           </header>
         </Pagina>
