@@ -10,7 +10,7 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { RoutePath } from "Router/routes";
 import { ReactComponent as Logout } from "assets/icons/logout.svg";
-import { Cabecalho, ImgLogo, Logout1, MenuItemLogout, Pagina } from "./style";
+import { BotãoSair, Cabecalho, Favorito, ImgLogo, Logout1, MenuItemLogout, Pagina } from "./style";
 import { AuthProvider, useAuthContext } from "Auth/Context/AuthContext";
 import { Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
@@ -48,37 +48,38 @@ function Header() {
   return (
     <header className={`${isScrolled && "bg-red-500"}`}>
       <AuthProvider>
-        
-      <Pagina>
-        <header>
-          <Cabecalho>
-            <ImgLogo
-              src="https://i.pinimg.com/736x/bf/21/de/bf21deeef128ed67160f9fddd520036b.jpg"
-              alt=""
+        <Pagina>
+          <header>
+            <Cabecalho>
+              <ImgLogo
+                src="https://i.pinimg.com/736x/bf/21/de/bf21deeef128ed67160f9fddd520036b.jpg"
+                alt=""
               />
-            <ListItemButton onClick={logout}>
-              <Logout1>
-
-              <ListItemIcon>
-                <Icon></Icon>
-              </ListItemIcon>
-              <ListItemText primary="Sair" />
-              </Logout1>
-            </ListItemButton>
-               <IconButton
-            size="large"
-            aria-label="show more"
-            aria-haspopup="true"
-            onClick={() =>  navigate(`/favoritos`)}
-            color="inherit"
-            />
-            <Badge badgeContent={favoritescont} color="primary">
-              <Favorite />
-            </Badge>
-          </Cabecalho>
-        </header>
-      </Pagina>
-              </AuthProvider>
+              <BotãoSair>
+                <ListItemButton onClick={logout}>
+                  <ListItemText primary="Sair" />
+                </ListItemButton>
+              </BotãoSair>
+              <Favorito>
+                <div>
+                  <IconButton
+                    size="large"
+                    aria-label="show more"
+                    aria-haspopup="true"
+                    onClick={() => navigate(`/favoritos`)}
+                    color="inherit"
+                  >
+      
+                  <Badge badgeContent={favoritescont} color="secondary">
+                    <Favorite />
+                  </Badge>
+                  </IconButton>
+                </div>
+              </Favorito>
+            </Cabecalho>
+          </header>
+        </Pagina>
+      </AuthProvider>
     </header>
   );
 }

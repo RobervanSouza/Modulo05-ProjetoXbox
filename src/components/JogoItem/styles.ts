@@ -7,16 +7,14 @@ export const JogoItem1 = styled.div`
   justify-content: flex-start;
   gap: 15px;
   align-items: center;
-  max-width: 200px;
-  width: 100%;
-  margin-left: 2rem;
-  margin-top: 3rem;
+  width: 180%;
+  margin-left: 4rem;
   cursor: pointer;
   min-height: 225px;
+  max-width: 200px;
   div {
     display: flex;
     flex-direction: column;
-
     align-items: center;
     gap: 10px;
   }

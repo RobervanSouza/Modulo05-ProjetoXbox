@@ -17,47 +17,43 @@ export const ListaJogoTitle = styled.div`
 `;
 
 export const ListaJogoSelect = styled.select`
- margin-left: 3rem;
+  margin-left: 23rem;
+  margin: 0rem 29rem 0rem 3rem;
+  justify-content: space-between;
 `;
 
 export const ListaJogoTodos = styled.div`
-  
-    justify-content: center;
-    margin-top: 75px;
-    display: flex;
-    gap: 5px 0px;
-    flex-wrap: wrap;
-    color: white;
-  
+  justify-content: center;
+  margin-top: 75px;
+  display: flex;
+  gap: 75px 20px;
+  flex-wrap: wrap;
 `;
 export const Card = styled.div`
-    margin-left: 3rem;
-    display: flex;
-    margin-top: 3rem;
-    align-items: center;
-    justify-content: space-between;
-    width: 55rem;
-    transform: rotatey(-45px);
-    cursor: pointer;
-    color: white;
-  
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 55rem;
+  transform: rotatey(-45px);
+  cursor: pointer;
 `;
 export const Categoria = styled.div`
-padding: 2rem;
-justify-content: space-between;
-
-
-
-
+  margin-left: 23rem;
+  flex-direction: column;
+ cursor: pointer;
+ background-color: red;
 `;
 export const Button = styled.button`
 color: white;
-background-color: #90ee90;
+background-color: red;
 width: 5rem;
 height: 5rem;
 display: block ;
 border: none;
 font-size: 2rem;
+cursor: pointer;
+flex-direction: column;
 `;
 
 

@@ -22,8 +22,6 @@ function ListaJogo({ children }: ListaJogoProps) {
   return (
     <section>
       <ListaJogoHeader>
-        <ListaJogoTodos>{children}</ListaJogoTodos>
-      </ListaJogoHeader>
       <ListaJogoTitle>
         <div>
           <Categoria>
@@ -31,7 +29,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 definirProdutos(products);
               }}
-            >
+              >
               {" "}
               Todos {" "}
             </Button>
@@ -39,7 +37,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 filtrarPorCategoria("luta");
               }}
-            >
+              >
               {" "}
               luta{" "}
             </Button>
@@ -47,7 +45,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 filtrarPorCategoria("Ação");
               }}
-            >
+              >
               {" "}
               Ação{" "}
             </Button>
@@ -55,7 +53,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 filtrarPorCategoria("corrida");
               }}
-            >
+              >
               {" "}
               corrida{" "}
             </Button>
@@ -64,7 +62,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 filtrarPorCategoria("futebol");
               }}
-            >
+              >
               {" "}
               futebol{" "}
             </Button>
@@ -73,7 +71,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               onClick={() => {
                 filtrarPorCategoria("Guerra");
               }}
-            >
+              >
               {" "}
               Guerra{" "}
             </Button>
@@ -92,6 +90,8 @@ function ListaJogo({ children }: ListaJogoProps) {
           </Categoria>
         </div>
       </ListaJogoTitle>
+            </ListaJogoHeader>
+
     </section>
   );
 }

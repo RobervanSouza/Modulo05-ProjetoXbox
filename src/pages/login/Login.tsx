@@ -34,6 +34,7 @@ const handleSubmit = () => {
   loginSchema
   .validate({ email, password },{ abortEarly: false} )
   .then((dadosValidados) => {
+
     login(dadosValidados.email, dadosValidados.password).then(() => {
       window.location.reload();
      

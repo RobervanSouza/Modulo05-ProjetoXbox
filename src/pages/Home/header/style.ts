@@ -66,5 +66,19 @@ export const MenuItemLogout = styled.button`
 
 export const Logout1 = styled.div`
 margin-left: 3rem;
+
   
 `;
+
+export const Favorito= styled.div`
+
+align-items: center;
+
+
+`;
+export const BotãoSair = styled.button`
+  margin-left: 1rem;
+background-color: red;
+  margin-right: 10rem;
+`;
+
