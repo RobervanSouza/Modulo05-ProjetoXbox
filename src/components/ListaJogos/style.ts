@@ -12,7 +12,7 @@ export const ListaJogoHeader = styled.div`
 `;
 
 export const ListaJogoTitle = styled.div`
- margin-top: 3rem;
+ margin-top: 1rem;
 
 `;
 
@@ -32,11 +32,11 @@ export const ListaJogoTodos = styled.div`
 export const Card = styled.div`
 
   display: flex;
-  margin-top: 3rem;
+  margin-top: .1rem;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:space-evenly;
- 
+
 
 `;
 export const Categoria = styled.div`

@@ -76,6 +76,7 @@ function ListaJogo({ children }: ListaJogoProps) {
               Guerra{" "}
             </Button>
 
+            </Categoria>
             {
               <div>
                 <Card>
@@ -87,7 +88,6 @@ function ListaJogo({ children }: ListaJogoProps) {
                 </Card>
               </div>
             }
-          </Categoria>
         </div>
       </ListaJogoTitle>
             </ListaJogoHeader>

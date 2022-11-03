@@ -4,14 +4,18 @@ export const JogoItem1 = styled.div`
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 15px;
   align-items: center;
   width: 180%;
-  margin-left: 4rem;
+  margin-left: 2rem;
+  position: relative;
+  z-index: 1;
+  transform: translateY(100px);
   cursor: pointer;
   min-height: 225px;
   max-width: 200px;
+  margin-top: 1rem;
   div {
     display: flex;
     flex-direction: column;
@@ -70,7 +74,7 @@ export const JogoItemGamePlay = styled.small`
 
 export const A = styled.a`
   width: 150px;
-  margin-top: 10px;
+  margin-top: 1px;
 `;
 
 export const Button = styled.button`
