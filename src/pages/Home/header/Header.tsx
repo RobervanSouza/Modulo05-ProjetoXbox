@@ -10,16 +10,35 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { RoutePath } from "Router/routes";
 import { ReactComponent as Logout } from "assets/icons/logout.svg";
-import { BotãoSair, Cabecalho, Cadastrar, Favorito, ImgLogo, Logout1, MenuItemLogout, Pagina } from "./style";
+import {
+  BotãoSair,
+  Cabecalho,
+  Cadastrar,
+  Favorito,
+  ImgLogo,
+  Logout1,
+  MenuItemLogout,
+  Pagina,
+} from "./style";
 import { AuthProvider, useAuthContext } from "Auth/Context/AuthContext";
 import { AddTask, Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { favoritoContext } from "Favoritos/contexts/FavoritoContext";
 import CadastrarJogos from "pages/CadastrarJogos/CadastrarJogos";
+import { useQuery } from "@tanstack/react-query";
+import { QueryKey } from "components/Api/QueryKey";
+import { ProductService } from "Services/JogosServices";
+import { OrderItemType } from "components/TodosJogos/OrderItemType";
+import { Jogos } from "components/TodosJogos/Interface";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout } = useAuthContext();
+  const { data: jogosData } = useQuery(
+    [QueryKey.JOGOS],
+    ProductService.getLista
+  );
+  const [jogos, setJogos] = useState<Jogos[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,18 +56,24 @@ function Header() {
     };
   }, []);
 
-    const { favorites } = useContext(favoritoContext);
+  const { favorites } = useContext(favoritoContext);
 
   const favoritescont = favorites.length;
 
-   const favorito = useNavigate();
+  const favorito = useNavigate();
   function handleclick() {
     favorito(`/favoritos`);
   }
-   const cadastrar = useNavigate();
+  const cadastrar = useNavigate();
   function click() {
     cadastrar(`/cadastrarJogos`);
   }
+
+useEffect(()=>{
+  setJogos( jogosData || [] );
+  [jogosData]
+});
+
   return (
     <header className={`${isScrolled && "bg-red-500"}`}>
       <AuthProvider>

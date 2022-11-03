@@ -1,3 +1,215 @@
+import { HTMLAttributes, useEffect, useState } from "react";
+import {
+  AddCard,
+  EditForm,
+  ManageProducts1,
+  ManageProductsActions,
+  ManageProductsActionsCancel,
+  ManageProductsActionsSave,
+  ManageProductsContent,
+  ManageProductsContentAdd,
+  ManageProductsSub,
+  ManageProductsTitle,
+} from "./style";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import { Jogos } from "components/TodosJogos/Interface";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { QueryKey } from "components/Api/QueryKey";
+import { ProductService } from "Services/JogosServices";
+import EditJogo from "pages/EditarJogo/Editar";
+import { products } from "mock/JogosItens";
+import { ErrorResponse } from "components/Api/Error";
+import { Product } from "components/Api/Jogos";
+type ManageProductsType = HTMLAttributes<HTMLDivElement>;
+
+type ManageProductsProps = {} & ManageProductsType;
+
+const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
+  const [jogos, setJogos] = useState<Jogos[]>([]);
+  const { data: productsData } = useQuery(
+    [QueryKey.JOGOS],
+    ProductService.getLista
+  );
+
+  const add = useMutation(ProductService.create, {
+    onSuccess: (data: Jogos & ErrorResponse) => {
+      if (data.statusCode) {
+        return;
+      }
+
+      const productList = [...products, data as Jogos];
+      setJogos(productList);
+    },
+    onError: () => {
+      console.error("Erro ao adicionar um produto");
+    },
+  });
+
+  const form = {
+    name: "",
+    categoria: "",
+    description: "",
+    imageUrl: "",
+    ano: Number(""),
+    score: Number(""),
+    treiler: "",
+    gameplay: "",
+  };
+
+  const [isAdding, setIsAdding] = useState(false);
+  const [jogoToAdd, setJogoToAdd] = useState(form);
+
+  const handleAddChange = (name: string, value: string | number) => {
+    setJogoToAdd({ ...jogoToAdd, [name]: value });
+  };
+
+  const productIsValid = () =>
+    Boolean(
+      jogoToAdd.name.length &&
+        jogoToAdd.categoria.length &&
+        jogoToAdd.description.length &&
+        jogoToAdd.imageUrl.length &&
+        jogoToAdd.ano.toString().length &&
+        jogoToAdd.score.toString().length &&
+        jogoToAdd.treiler.length &&
+        jogoToAdd.gameplay.length
+    );
+
+  const productFormatter = (toFormat: typeof form): Product => ({
+    name: toFormat.name,
+    categoria: toFormat.categoria,
+    description: toFormat.description,
+    imageUrl: toFormat.imageUrl,
+    ano: toFormat.ano,
+    score: toFormat.score,
+    treiler: toFormat.treiler,
+    gameplay: toFormat.gameplay,
+    
+  });
+
+  const [cancel, setCancel] = useState(false);
+
+  const handleCancel = () => {
+    setCancel(true);
+    setIsAdding(false);
+    setTimeout(() => setCancel(false));
+  };
+
+  const handleSave = () => {
+    const canAdd = productIsValid();
+    const productFormatted = productFormatter(jogoToAdd);
+console.log(productFormatted, "teeererre")
+    if (canAdd) add.mutate(productFormatted);
+    setTimeout(() => handleCancel(), 300);
+    setJogoToAdd(form);
+    setIsAdding(false);
+  };
+
+  useEffect(() => {
+    setJogos(productsData || []);
+  }, [productsData]);
+
+  return (
+    <ManageProducts1 {...props}>
+      <ManageProductsTitle>Cadastrar Jogos</ManageProductsTitle>
+      <ManageProductsSub>
+        <b>Xbox</b>
+      </ManageProductsSub>
+      <ManageProductsContent>
+        {!isAdding ? (
+          <ManageProductsContentAdd onClick={() => setIsAdding(!isAdding)}>
+            <ListAltIcon />
+            <span>Cadastrar um Jogo</span>
+          </ManageProductsContentAdd>
+        ) : (
+          <AddCard>
+            <EditForm
+              type="text"
+              placeholder="Nome"
+              success={Boolean(jogoToAdd.name.length)}
+              value={jogoToAdd.name}
+              onChange={({ target }) => handleAddChange("name", target.value)}
+            />
+            <EditForm
+              type="text"
+              placeholder="categoria"
+              success={Boolean(jogoToAdd.categoria.length)}
+              value={jogoToAdd.categoria}
+              onChange={({ target }) =>
+                handleAddChange("categoria", target.value)
+              }
+            />
+            <EditForm
+              type="text"
+              placeholder="Descrição"
+              success={Boolean(jogoToAdd.description.length)}
+              value={jogoToAdd.description}
+              onChange={({ target }) =>
+                handleAddChange("descricao", target.value)
+              }
+            />
+            <EditForm
+              type="text"
+              placeholder="ImagemUrl"
+              success={Boolean(jogoToAdd.imageUrl.length)}
+              value={jogoToAdd.imageUrl}
+              onChange={({ target }) =>
+                handleAddChange("imagemUrl", target.value)
+              }
+            />
+            <EditForm
+              type="text"
+              placeholder="Ano"
+              success={Boolean(jogoToAdd.ano)}
+              value={jogoToAdd.ano || ""}
+              onChange={({ target }) => handleAddChange("ano", target.value)}
+            />
+            <EditForm
+              type="text"
+              placeholder="Score"
+              success={Boolean(jogoToAdd.score)}
+              value={jogoToAdd.score || ""}
+              onChange={({ target }) => handleAddChange("score", target.value)}
+            />
+            <EditForm
+              type="text"
+              placeholder="TreilerUrl"
+              success={Boolean(jogoToAdd.treiler.length)}
+              value={jogoToAdd.treiler}
+              onChange={({ target }) =>
+              handleAddChange("treiler", target.value)
+              }
+            />
+            <EditForm
+              type="text"
+              placeholder="GamePlayUrl"
+              success={Boolean(jogoToAdd.gameplay.length)}
+              value={jogoToAdd.gameplay}
+              onChange={({ target }) =>
+              handleAddChange("gameplay", target.value)
+              }
+            />
+          </AddCard>
+        )}
+        {jogos.map((product, index) => (
+          <EditJogo product={product} key={index} />
+        ))}
+      </ManageProductsContent>
+      <ManageProductsActions>
+        <ManageProductsActionsCancel onClick={handleCancel}>
+          Cancelar
+        </ManageProductsActionsCancel>
+        <ManageProductsActionsSave onClick={handleSave}>
+          Salvar
+        </ManageProductsActionsSave>
+      </ManageProductsActions>
+    </ManageProducts1>
+  );
+};
+
+export default CadastrarJogos;
+
+/*
 import React from 'react'
 import { Cadastrar1 } from './style';
 import { Button, Input } from "@mui/material";
@@ -114,3 +326,4 @@ const CadastrarJogos = () => {
   );
 };
 export default CadastrarJogos;
+*/

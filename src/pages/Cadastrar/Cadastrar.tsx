@@ -51,6 +51,12 @@ const loginSchema = yup.object().shape({
           onChange={(e) => [setName(e.target.value), setError("")]}
         />
         <Input
+          type="username"
+          placeholder="Digite seu sobrenome"
+          value={name}
+          onChange={(e) => [setName(e.target.value), setError("")]}
+        />
+        <Input
           type="email"
           placeholder="Digite seu E-mail"
           value={email}
@@ -58,17 +64,24 @@ const loginSchema = yup.object().shape({
         />
 
         <Input
-          id="number"
+          type="password"
+          placeholder="Digite sua Senha"
+          value={senha}
+          onChange={(e) => [setSenha(e.target.value), setError("")]}
+        />
+        <Input
+          
           type="string"
           placeholder="Digite seu CPF"
           value={cpf}
           onChange={(e) => [setCpf(e.target.value), setError("")]}
         />
         <Input
-          type="password"
-          placeholder="Digite sua Senha"
-          value={senha}
-          onChange={(e) => [setSenha(e.target.value), setError("")]}
+        
+          type="string"
+          placeholder="Digite seu se e admin"
+          value={cpf}
+          onChange={(e) => [setCpf(e.target.value), setError("")]}
         />
         <Teste> {error}</Teste>
         <Teste1>
