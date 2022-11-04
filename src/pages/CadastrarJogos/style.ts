@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 export const ManageProducts1 = styled.section`
   padding: 20px;
-  background-image: url(https://thumbs.dreamstime.com/b/logotipo-da-s%C3%A9rie-xbox-brilha-ao-redor-do-bot%C3%A3o-joystick-no-fundo-escuro-182098188.jpg);
+  background-image: url(https://besthqwallpapers.com/Uploads/2-4-2021/160732/thumb2-xbox-green-logo-4k-green-neon-lights-creative-green-abstract-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -12,7 +12,7 @@ export const ManageProducts1 = styled.section`
 
 export const ManageProductsTitle = styled.h1`
 
-
+color: red;
     font-size: 20px;
     margin: 0;
   
@@ -58,7 +58,7 @@ export const ManageProductsContent = styled.div`
 `;
 
 export const ManageProductsContentAdd = styled.div`
-  
+background-color: green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +75,7 @@ export const ManageProductsContentAdd = styled.div`
 `;
 
 export const AddCard = styled.div`
-
+background-color: green;
     display: flex;
     flex-direction: column;
     justify-content: center;
