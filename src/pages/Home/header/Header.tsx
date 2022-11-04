@@ -71,7 +71,7 @@ function Header() {
 
 useEffect(()=>{
   setJogos( jogosData || [] );
-  [jogosData]
+[jogosData]
 });
 
   return (

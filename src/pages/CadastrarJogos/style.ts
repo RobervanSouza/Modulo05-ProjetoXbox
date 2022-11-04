@@ -58,20 +58,19 @@ export const ManageProductsContent = styled.div`
 `;
 
 export const ManageProductsContentAdd = styled.div`
-background-color: green;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    max-height: 285px;
-  
-    font-weight: 500;
-    
-    border-radius: 8px;
-    gap: 10px;
-    cursor: pointer;
-  
+  background-image: url(https://overplay.com.br/wp-content/uploads/2022/07/overplay-xbox.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  max-height: 285px;
+
+  font-weight: 500;
+
+  border-radius: 8px;
+  gap: 10px;
+  cursor: pointer;
 `;
 
 export const AddCard = styled.div`
