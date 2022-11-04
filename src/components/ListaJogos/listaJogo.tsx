@@ -1,9 +1,19 @@
-import {JogosItem} from "components/JogoItem/JogoItem";
+import { JogosItem } from "components/JogoItem/JogoItem";
 import { Jogos } from "components/TodosJogos/Interface";
+import { get } from "http";
 import { products } from "mock/JogosItens";
-import React, { Children, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
+import { ProductService } from "Services/JogosServices";
 import { getEnabledCategories } from "trace_events";
-import { Button, Card, Categoria, ListaJogoHeader, ListaJogoTitle, ListaJogoTodos, } from "./style";
+import {
+  Button,
+  Card,
+  Categoria,
+  ListaJogoHeader,
+  ListaJogoTitle,
+  ListaJogoTodos,
+} from "./style";
+
 
 interface ListaJogoProps {
   children: React.ReactNode;
@@ -19,90 +29,97 @@ function ListaJogo({ children }: ListaJogoProps) {
 
     definirProdutos(resultadoDoFiltro);
   }
+
+  useEffect ( ( )  =>  {
+     async function getJogos(){
+     const jogos=   await ProductService.getLista(
+  )
+ if (jogos.length>0)  definirProdutos(jogos)
+  
+     }
+
+   getJogos()
+  }, []);
+
   return (
     <section>
       <ListaJogoHeader>
-      <ListaJogoTitle>
-        <div>
-          <Categoria>
-            <Button
-              onClick={() => {
-                definirProdutos(products);
-              }}
+        <ListaJogoTitle>
+          <div>
+            <Categoria>
+              <Button
+                onClick={() => {
+                  definirProdutos(products);
+                }}
               >
-              {" "}
-              Todos {" "}
-            </Button>
-            <Button
-              onClick={() => {
-                filtrarPorCategoria("luta");
-              }}
+                {" "}
+                Todos{" "}
+              </Button>
+              <Button
+                onClick={() => {
+                  filtrarPorCategoria("luta");
+                }}
               >
-              {" "}
-              luta{" "}
-            </Button>
-            <Button
-              onClick={() => {
-                filtrarPorCategoria("Ação");
-              }}
+                {" "}
+                luta{" "}
+              </Button>
+              <Button
+                onClick={() => {
+                  filtrarPorCategoria("Ação");
+                }}
               >
-              {" "}
-              Ação{" "}
-            </Button>
-            <Button
-              onClick={() => {
-                filtrarPorCategoria("corrida");
-              }}
+                {" "}
+                Ação{" "}
+              </Button>
+              <Button
+                onClick={() => {
+                  filtrarPorCategoria("corrida");
+                }}
               >
-              {" "}
-              corrida{" "}
-            </Button>
+                {" "}
+                corrida{" "}
+              </Button>
 
-            <Button
-              onClick={() => {
-                filtrarPorCategoria("futebol");
-              }}
+              <Button
+                onClick={() => {
+                  filtrarPorCategoria("futebol");
+                }}
               >
-              {" "}
-              futebol{" "}
-            </Button>
+                {" "}
+                futebol{" "}
+              </Button>
 
-            <Button
-              onClick={() => {
-                filtrarPorCategoria("Guerra");
-              }}
+              <Button
+                onClick={() => {
+                  filtrarPorCategoria("Guerra");
+                }}
               >
-              {" "}
-              Guerra{" "}
-            </Button>
-
+                {" "}
+                Guerra{" "}
+              </Button>
             </Categoria>
             {
               <div>
                 <Card>
                   {produtos.map((products) => (
                     <div>
-                      <JogosItem product={products} onSelect={handleSelection} />
+                      <JogosItem
+                        product={products}
+                        onSelect={handleSelection}
+                      />
                     </div>
                   ))}
                 </Card>
               </div>
             }
-        </div>
-      </ListaJogoTitle>
-            </ListaJogoHeader>
-
+          </div>
+        </ListaJogoTitle>
+      </ListaJogoHeader>
     </section>
   );
 }
 
 export default ListaJogo;
-
-
- 
-
-
-
 
 /*<Teste>
 <Button

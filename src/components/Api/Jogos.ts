@@ -3,8 +3,8 @@ export interface Product {
   categoria: string;
   description: string;
   imageUrl: string;
-  ano: number;
-  score: number;
+  ano: string;
+  score: string;
   treiler: string;
   gameplay: string;
 }
@@ -19,8 +19,8 @@ export interface jogosResponse {
   name: string;
   description: string;
   image: string;
-  ano: number;
-  score: number;
+  ano: string;
+  score: string;
   treiler: string;
   gameplay: string;
   updatedAt?: string;

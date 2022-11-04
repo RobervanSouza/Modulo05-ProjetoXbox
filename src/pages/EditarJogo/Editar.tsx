@@ -10,7 +10,7 @@ const EditJogo = ({product}: EditJogoProps) => {
   return (
     <EditProduct1>
       <>
-        <EditProductImage src="" alt="Pizza de..." />
+        <EditProductImage src="" alt="Xbox" />
         <EditProductDetails>
           <EditProductDetailsName>Nome do Produto</EditProductDetailsName>
           <EditProductDetailsPrice>R$ 00,00</EditProductDetailsPrice>
@@ -19,19 +19,17 @@ const EditJogo = ({product}: EditJogoProps) => {
           </EditProductDetailsDescription>
         </EditProductDetails>
 
-        <EditProductAction>
-           Editar
-        </EditProductAction>
+        <EditProductAction>Editar</EditProductAction>
       </>
       <EditFormGroup>
         <EditForm type="text" placeholder="Nome" />
         <EditForm type="text" placeholder="categoria" />
         <EditForm type="text" placeholder="Descrição" />
-        <EditForm type="url" placeholder="ImagemUrl" />
-        <EditForm type="number" placeholder="Ano" />
-        <EditForm type="number" placeholder="Score" />
-        <EditForm type="url" placeholder="TreilerUrl" />
-        <EditForm type="url" placeholder="GamePlayUrl" />
+        <EditForm type="text" placeholder="ImagemUrl" />
+        <EditForm type="text" placeholder="Ano" />
+        <EditForm type="text" placeholder="Score" />
+        <EditForm type="text" placeholder="TreilerUrl" />
+        <EditForm type="text" placeholder="GamePlayUrl" />
         <Delete>Deletar</Delete>
       </EditFormGroup>
     </EditProduct1>

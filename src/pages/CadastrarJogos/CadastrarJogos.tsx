@@ -50,8 +50,8 @@ const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
     categoria: "",
     description: "",
     imageUrl: "",
-    ano: Number(""),
-    score: Number(""),
+    ano: "",
+    score: "",
     treiler: "",
     gameplay: "",
   };
@@ -69,8 +69,8 @@ const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
         jogoToAdd.categoria.length &&
         jogoToAdd.description.length &&
         jogoToAdd.imageUrl.length &&
-        jogoToAdd.ano.toString().length &&
-        jogoToAdd.score.toString().length &&
+        jogoToAdd.ano.length &&
+        jogoToAdd.score.length &&
         jogoToAdd.treiler.length &&
         jogoToAdd.gameplay.length
     );
@@ -98,7 +98,7 @@ const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
   const handleSave = () => {
     const canAdd = productIsValid();
     const productFormatted = productFormatter(jogoToAdd);
-console.log(productFormatted, "teeererre")
+
     if (canAdd) add.mutate(productFormatted);
     setTimeout(() => handleCancel(), 300);
     setJogoToAdd(form);
@@ -145,7 +145,7 @@ console.log(productFormatted, "teeererre")
               success={Boolean(jogoToAdd.description.length)}
               value={jogoToAdd.description}
               onChange={({ target }) =>
-                handleAddChange("descricao", target.value)
+                handleAddChange("description", target.value)
               }
             />
             <EditForm
@@ -154,21 +154,21 @@ console.log(productFormatted, "teeererre")
               success={Boolean(jogoToAdd.imageUrl.length)}
               value={jogoToAdd.imageUrl}
               onChange={({ target }) =>
-                handleAddChange("imagemUrl", target.value)
+                handleAddChange("imageUrl", target.value)
               }
             />
             <EditForm
               type="text"
               placeholder="Ano"
               success={Boolean(jogoToAdd.ano)}
-              value={jogoToAdd.ano || ""}
+              value={jogoToAdd.ano}
               onChange={({ target }) => handleAddChange("ano", target.value)}
             />
             <EditForm
               type="text"
               placeholder="Score"
               success={Boolean(jogoToAdd.score)}
-              value={jogoToAdd.score || ""}
+              value={jogoToAdd.score}
               onChange={({ target }) => handleAddChange("score", target.value)}
             />
             <EditForm
@@ -177,7 +177,7 @@ console.log(productFormatted, "teeererre")
               success={Boolean(jogoToAdd.treiler.length)}
               value={jogoToAdd.treiler}
               onChange={({ target }) =>
-              handleAddChange("treiler", target.value)
+                handleAddChange("treiler", target.value)
               }
             />
             <EditForm
@@ -186,7 +186,7 @@ console.log(productFormatted, "teeererre")
               success={Boolean(jogoToAdd.gameplay.length)}
               value={jogoToAdd.gameplay}
               onChange={({ target }) =>
-              handleAddChange("gameplay", target.value)
+                handleAddChange("gameplay", target.value)
               }
             />
           </AddCard>

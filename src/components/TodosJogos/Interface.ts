@@ -4,8 +4,8 @@ export interface Jogos {
   categoria: string;
   description: string;
   image: string;
-  ano: number;
-  score: number;
+  ano: string;
+  score: string;
   treiler: string;
   gameplay: string;
 }

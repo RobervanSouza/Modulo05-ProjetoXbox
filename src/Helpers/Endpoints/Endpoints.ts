@@ -4,10 +4,8 @@ import { jogos}  from "./Jogos";
 
 
 export const endpoint = {
-  baseUrl: "https://xbox-jogo.herokuapp.com/Jogos/api-docs/",
-...jogos,
-...usuarios,
-... auth
-
-
+  baseUrl: "https://xbox-jogo.herokuapp.com",
+  ...jogos,
+  ...usuarios,
+  ...auth,
 };

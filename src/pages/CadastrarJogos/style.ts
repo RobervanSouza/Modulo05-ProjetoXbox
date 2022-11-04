@@ -46,8 +46,7 @@ export const ManageProductsContent = styled.div`
   flex-direction: row;
   margin-top: 15px;
   margin-left: 23rem;
-  height: 400px;
-  width: 400px;
+
 
   padding-bottom: 20px;
   box-sizing: border-box;
@@ -55,7 +54,6 @@ export const ManageProductsContent = styled.div`
   flex-wrap: wrap;
   gap: 15px;
   overflow: auto;
-  background-image: url(https://cdn.ome.lt/mjXY5CgfcVT33OC_XK7fmNbSWyg=/770x0/smart/uploads/conteudo/fotos/xbox-series-x_mD4G4wt.jpg);
  
 `;
 
