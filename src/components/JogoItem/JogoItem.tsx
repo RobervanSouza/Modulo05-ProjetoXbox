@@ -48,7 +48,7 @@ export const  JogosItem = ({product, onSelect}: JogoItemProps) => {
     <div>
 
     <JogoItem1 role="listitem">
-      <JogoItemImage src={product.image} />
+      <JogoItemImage src={product.imageUrl} />
       <IconButton
         onClick={() => (isFavorite ? removeFavorites() : addFavoritos())}
         aria-label="add to favorites"

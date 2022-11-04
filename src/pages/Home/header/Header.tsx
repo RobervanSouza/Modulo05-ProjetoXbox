@@ -70,7 +70,7 @@ function Header() {
   }
 
 useEffect(()=>{
-  setJogos( jogosData || [] );
+  setJogos(jogosData || [] );
 [jogosData]
 });
 

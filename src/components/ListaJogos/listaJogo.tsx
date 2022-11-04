@@ -49,7 +49,7 @@ function ListaJogo({ children }: ListaJogoProps) {
             <Categoria>
               <Button
                 onClick={() => {
-                  definirProdutos(products);
+                  definirProdutos(produtos);
                 }}
               >
                 {" "}

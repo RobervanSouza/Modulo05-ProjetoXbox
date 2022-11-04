@@ -34,7 +34,7 @@ export const Favoritos = styled.div`
 
 
 export const Logo = styled.div`
-  ${() => css`
+ 
     margin-left: 2rem;
     margin-top: 1rem;
     display: flex;
@@ -44,5 +44,17 @@ export const Logo = styled.div`
     img {
       height: 80px;
     }
-  `}
+  
+`;
+export const Baner = styled.div`
+  background-image: url(https://img.freepik.com/vetores-gratis/banner-de-estilo-neon-da-comunidade-do-console-gamepad-em-fundo-de-tijolo_1262-13411.jpg?w=2000);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 84rem;
+  height: 56rem;
+`;
+
+export const Card1 = styled.div`
+
 `;

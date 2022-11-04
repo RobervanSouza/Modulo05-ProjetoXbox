@@ -3,19 +3,24 @@ import styled, { css } from "styled-components";
 
 
 export const ManageProducts1 = styled.section`
-  padding: 20px;
+padding: 20px;
   background-image: url(https://besthqwallpapers.com/Uploads/2-4-2021/160732/thumb2-xbox-green-logo-4k-green-neon-lights-creative-green-abstract-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  width: 100vw;
+  margin-top: 4rem;
+  
 `;
 
 export const ManageProductsTitle = styled.h1`
-
-color: red;
-    font-size: 20px;
-    margin: 0;
+  align-items: center;
+  color: red;
+  font-size: 20px;
   
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
 export const ManageProductsSub = styled.h2`
@@ -40,21 +45,17 @@ export const ManageProductsSub = styled.h2`
 `;
 
 export const ManageProductsContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 15px;
-  margin-left: 23rem;
-
-
+  margin-top: 2rem;
+  height: 600px;
   padding-bottom: 20px;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
   overflow: auto;
- 
+  margin-left: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
 export const ManageProductsContentAdd = styled.div`
@@ -71,10 +72,11 @@ export const ManageProductsContentAdd = styled.div`
   border-radius: 8px;
   gap: 10px;
   cursor: pointer;
+  margin-top: 5rem;
 `;
 
 export const AddCard = styled.div`
-background-color: green;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +85,7 @@ background-color: green;
     max-height: 285px;
     box-sizing: border-box;
     padding: 10px 0;
- 
+    margin-top: 1rem;
     font-weight: 500;
     
     border-radius: 8px;
@@ -130,6 +132,14 @@ export const EditForm = styled.input<{ error?: boolean; success?: boolean }>`
   
 `;
 
+export const TesteCard = styled.div`
+EditForm {
+
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+`;
 
 
 

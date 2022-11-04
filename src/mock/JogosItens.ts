@@ -8,7 +8,7 @@ export const products: Jogos[] = [
     name: "Gta",
     categoria: "Guerra",
     description: "Jogo de luta e ação",
-    image:
+    imageUrl:
       "https://compass-ssl.xbox.com/assets/a0/4f/a04f2744-74d9-4668-8263-e0261fbea869.jpg?n=GTA-V_GLP-Page-Hero-1084_1920x1080.jpg",
     ano: "weqe",
     score: "rewrw",

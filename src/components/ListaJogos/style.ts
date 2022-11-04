@@ -31,15 +31,16 @@ export const ListaJogoTodos = styled.div`
 `;
 export const Card = styled.div`
 margin-left: -2rem;
-margin-top: -2rem;
+margin-top: 1rem;
   display: flex;
-
+margin-left: 3rem;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   
 `;
 export const Categoria = styled.div`
+
   margin-top: 1.5rem;
   align-items: flex-end;
   justify-content: space-evenly;

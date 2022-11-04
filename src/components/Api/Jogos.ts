@@ -18,7 +18,8 @@ export interface jogosResponse {
   id: string;
   name: string;
   description: string;
-  image: string;
+  categoria: string;
+  imageUrl: string;
   ano: string;
   score: string;
   treiler: string;

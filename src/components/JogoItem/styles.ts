@@ -4,11 +4,11 @@ export const JogoItem1 = styled.div`
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 15px;
   align-items: center;
   width: 180%;
-  margin-left: 2rem;
+ margin-left: 3rem;
   position: relative;
   z-index: 1;
   transform: translateY(100px);
@@ -31,8 +31,10 @@ export const JogoItemImage = styled.img`
 
 export const JogoItemName = styled.h3`
   text-align: center;
-  max-width: 90%;
-  margin: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+ 
+  color: red;
 `;
 
 export const JogoItemAno = styled.strong`

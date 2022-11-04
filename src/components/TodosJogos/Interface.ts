@@ -3,7 +3,7 @@ export interface Jogos {
   name: string;
   categoria: string;
   description: string;
-  image: string;
+  imageUrl: string;
   ano: string;
   score: string;
   treiler: string;
