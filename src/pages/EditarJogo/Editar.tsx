@@ -26,6 +26,7 @@ import {
   JogoItemScore,
   JogoItemTreiler,
 } from "./style";
+import { ProductService } from "Services/JogosServices";
 
 interface EditJogoProps {
   product: jogosResponse;
@@ -125,7 +126,9 @@ const EditJogo = ({ product, onEdit, onCancel, onDelete}: EditJogoProps) => {
             </JogoItemTreiler>
             <JogoItemScore>Score: {product.score}</JogoItemScore>
           </JogoItem1>
-          <EditProductAction onClick={() => onEditClick()}>
+          <EditProductAction onClick={() => onEditClick() 
+          
+          }>
             Editar
           </EditProductAction>
         </>

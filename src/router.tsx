@@ -1,3 +1,4 @@
+import Usuarios from "components/Usuarios/Usuarios";
 import FavoriteScreen from "Favoritos/contexts/FavoriteScreen";
 import Cadastrar from "pages/Cadastrar/Cadastrar";
 import CadastrarJogos from "pages/CadastrarJogos/CadastrarJogos";
@@ -14,6 +15,7 @@ const Router = () => {
       <Route path={RoutePath.HOME} element={<Home />} />
       <Route path={RoutePath.FAVORITOS} element={<FavoriteScreen />} />
       <Route path={RoutePath.CADASTRAR_JOGOS} element={<CadastrarJogos />} />
+      <Route path={RoutePath.USUARIOS} element={<Usuarios />} />
       <Route path="/Cadastrar" element={<Cadastrar />} />
     </Routes>
   );
