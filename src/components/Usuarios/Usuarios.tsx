@@ -1,4 +1,4 @@
-
+import EdirtarUsuarios from "components/EditarUsuarios/EditarUsuario";
 import { HTMLAttributes } from "react";
 import * as S from "./style";
 
@@ -15,7 +15,6 @@ const Usuarios = ({ ...props }: ManageUsersProps) => {
       </S.ManageUsersSub>
       <S.ManageUsersContent>
         <S.ManageUsersContentAdd>
-         
           <span>Adicionar Usuário</span>
         </S.ManageUsersContentAdd>
         <S.ManageUsersContentAdd>
@@ -27,7 +26,7 @@ const Usuarios = ({ ...props }: ManageUsersProps) => {
           <S.EditForm type="text" placeholder="IsAdmin" />
           <S.EditForm type="Url" placeholder="Imagem Url" />
         </S.ManageUsersContentAdd>
-        {"Componente EditUser"}
+        <EdirtarUsuarios />
       </S.ManageUsersContent>
       <S.ManageUsersActions>
         <S.ManageUsersActionsCancel>Cancelar</S.ManageUsersActionsCancel>

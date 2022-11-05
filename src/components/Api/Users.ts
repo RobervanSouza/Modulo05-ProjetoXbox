@@ -5,7 +5,7 @@ export interface User {
   password: string;
   cpf: string;
   isAdmin: string;
- 
+  imageUrl: string;
 }
 
 export interface UserUpdate {
@@ -21,6 +21,7 @@ export interface UserResponse {
   password: string;
   cpf: string;
   isAdmin: string;
+  imageUrl: string;
   updatedAt?: string;
   createdAt?: string;
 }
