@@ -118,6 +118,18 @@ useEffect(()=>{
                   &nbsp;cadastrar
                 </IconButton>
               </Cadastrar>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-haspopup="true"
+                onClick={() => cadastrar(`/gerenciarusuarios`)}
+                color="inherit"
+              >
+                <Badge>
+                  <AddTask />
+                </Badge>
+                &nbsp;cadastrar usuarios
+              </IconButton>
             </Cabecalho>
           </header>
         </Pagina>
