@@ -26,7 +26,7 @@ type ManageProductsType = HTMLAttributes<HTMLDivElement>;
 type ManageProductsProps = {} & ManageProductsType;
 
 const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
-  const [jogos, setJogos] = useState<Jogos[]>([]);
+  const [jogos, setJogos] = useState<jogosResponse[]>([]);
   const { data: productsData } = useQuery(
     [QueryKey.JOGOS],
     ProductService.getLista
@@ -34,12 +34,12 @@ const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
 
   // adicionar
   const add = useMutation(ProductService.create, {
-    onSuccess: (data: Jogos & ErrorResponse) => {
+    onSuccess: (data: jogosResponse & ErrorResponse) => {
       if (data.statusCode) {
         return;
       }
 
-      const productList = [...products, data as Jogos];
+      const productList = [...products, data as jogosResponse];
       setJogos(productList);
     },
     onError: () => {
@@ -49,13 +49,13 @@ const CadastrarJogos = ({ ...props }: ManageProductsProps) => {
 
   // editar
   const update = useMutation(ProductService.updateById, {
-    onSuccess: (data: Jogos & ErrorResponse) => {
+    onSuccess: (data: jogosResponse & ErrorResponse) => {
       if (data.statusCode) {
         return;
       }
 
       const editedUsers = products.map((i) =>
-        data.id === i.id ? (data as Jogos) : i
+        data.id === i.id ? (data as jogosResponse) : i
       );
       setJogos(editedUsers);
     },
