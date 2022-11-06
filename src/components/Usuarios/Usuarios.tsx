@@ -165,9 +165,9 @@ const Usuarios = ({ ...props }: ManageUsersProps) => {
             <S.EditForm
               type="text"
               placeholder="Sobrenome de usuário"
-              success={Boolean(userToAdd.email.length)}
-              value={userToAdd.email}
-              onChange={({ target }) => handleAddChange("email", target.value)}
+              success={Boolean(userToAdd.username.length)}
+              value={userToAdd.username}
+              onChange={({ target }) => handleAddChange("username", target.value)}
             />
             <S.EditForm
               type="text"
@@ -182,7 +182,7 @@ const Usuarios = ({ ...props }: ManageUsersProps) => {
               minLength={6}
               success={Boolean(userToAdd.password.length)}
               value={userToAdd.password}
-              onChange={({ target }) => handleAddChange("pass", target.value)}
+              onChange={({ target }) => handleAddChange("password", target.value)}
             />
             <S.EditForm
               type="text"
