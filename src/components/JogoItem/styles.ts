@@ -1,21 +1,23 @@
 import styled from "styled-components";
 export const JogoItem1 = styled.div`
-  background: blue;
+  background: green;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 15px;
   align-items: center;
-  width: 180%;
+  width: 300px;
+  padding: 25px;
  margin-left: 3rem;
   position: relative;
   z-index: 1;
   transform: translateY(100px);
-  cursor: pointer;
+ 
   min-height: 225px;
   max-width: 200px;
-  margin-top: 1rem;
+  margin-top: -5rem;
+  margin-bottom: 8rem;
   div {
     display: flex;
     flex-direction: column;
@@ -34,7 +36,7 @@ export const JogoItemName = styled.h3`
   max-width: 100%;
   overflow-wrap: break-word;
  
-  color: red;
+  color: white;
 `;
 
 export const JogoItemAno = styled.strong`
@@ -95,16 +97,47 @@ width: 20%;
   
 `;
 
-/*
-  <JogoItem1>
-    <JogoItemImage>imagem</JogoItemImage>
-    <JogoItemName> nome do jogo</JogoItemName>
-    <JogoItemDescription>descrição</JogoItemDescription>
-    <JogoItemCategoria>categoria</JogoItemCategoria>
-    <JogoItemAno>ano</JogoItemAno>
-    <JogoItemGamePlay>hgjg</JogoItemGamePlay>
-    <JogoItemTreiler>treiler</JogoItemTreiler>
-    <JogoItemScore>score</JogoItemScore>
-  </JogoItem1>;
+export const Modal = styled.div`
+height: 3px;
+overflow: hidden;
+position: relative;
+::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(transparent, rgba(red));
+  
+}
+`;
+export const Botaomais = styled.button`
+  #botao {
+    padding: 3px;
+    border-radius: 22px;
+    margin-top: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    cursor: pointer;
+    :hover {
+      background-color: green;
+      color: red;
+    }
+  }
+  align-items: center;
+  border: none;
+  padding: 3px;
+  border-radius: 22px;
+  margin-top: 5px;
 
-  */
+  background-color: yellow;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 16px;
+  :hover {
+    background-color: green;
+    color: green;
+  }
+`;
