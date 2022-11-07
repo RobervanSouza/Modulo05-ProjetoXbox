@@ -4,7 +4,7 @@ import { jogos}  from "./Jogos";
 
 
 export const endpoint = {
-  baseUrl: "https://xbox-jogo.herokuapp.com",
+  baseUrl: "https://api-xbox-game.onrender.com",
   ...jogos,
   ...usuarios,
   ...auth,
