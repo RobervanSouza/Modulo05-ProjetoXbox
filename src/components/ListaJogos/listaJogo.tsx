@@ -1,5 +1,7 @@
 import { JogosItem } from "components/JogoItem/JogoItem";
 import { Jogos } from "components/TodosJogos/Interface";
+import { jogos } from "Helpers/Endpoints/Jogos";
+
 import { get } from "http";
 import { products } from "mock/JogosItens";
 import React, { Children, useEffect, useState } from "react";
@@ -29,16 +31,14 @@ function ListaJogo({ children }: ListaJogoProps) {
 
     definirProdutos(resultadoDoFiltro);
   }
-
-  useEffect ( ( )  =>  {
-     async function getJogos(){
-     const jogos=   await ProductService.getLista(
-  )
- if (jogos.length>0)  definirProdutos(jogos)
-  
-     }
-
-   getJogos()
+  const todosJogos = () =>{
+       ProductService.getLista().then((listajogos) =>
+         definirProdutos(listajogos)
+       ); 
+  }
+  useEffect(() => {
+ todosJogos()
+     
   }, []);
 
   return (
@@ -49,7 +49,7 @@ function ListaJogo({ children }: ListaJogoProps) {
             <Categoria>
               <Button
                 onClick={() => {
-                  definirProdutos(produtos);
+               todosJogos()
                 }}
               >
                 {" "}

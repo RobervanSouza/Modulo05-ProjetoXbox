@@ -29,6 +29,7 @@ const Home = () => {
                 </ListaJogo>
               </Banner>
               <section></section>
+             
             </main>
           </div>
         </Home1>
@@ -37,5 +38,6 @@ const Home = () => {
     
         </Login>
   );
+  
 };
 export default Home;

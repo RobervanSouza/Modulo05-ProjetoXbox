@@ -96,20 +96,25 @@ export const Imagem = styled.div`
 width: 20%;
   
 `;
-
+/*
 export const Modal = styled.div`
-height: 3px;
-overflow: hidden;
-position: relative;
-::before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(transparent, rgba(red));
-  
-}
+  height: 3px;
+  overflow: hidden;
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(red));
+    .card.active {
+      height: auto;
+    }
+    .card.active ::before {
+      visibility: hidden;
+    }
+  }
 `;
 export const Botaomais = styled.button`
   #botao {
@@ -124,7 +129,9 @@ export const Botaomais = styled.button`
     :hover {
       background-color: green;
       color: red;
+      transition: all 0.2s ease-in-out;
     }
+   
   }
   align-items: center;
   border: none;
@@ -139,5 +146,8 @@ export const Botaomais = styled.button`
   :hover {
     background-color: green;
     color: green;
+    transition: all 0.2s ease-in-out;
   }
+  
 `;
+*/

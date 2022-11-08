@@ -70,3 +70,54 @@ margin-left: 2rem;
 background-color: #90ee90;
 
 `;
+export const Modal = styled.div`
+  height: 3px;
+  overflow: hidden;
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(red));
+    .card.active {
+      height: auto;
+    }
+    .card.active ::before {
+      visibility: hidden;
+    }
+  }
+`;
+export const Botaomais = styled.button`
+  #botao {
+    padding: 3px;
+    border-radius: 22px;
+    margin-top: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    cursor: pointer;
+    :hover {
+      background-color: green;
+      color: red;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  align-items: center;
+  border: none;
+  padding: 3px;
+  border-radius: 22px;
+  margin-top: 5px;
+
+  background-color: yellow;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 16px;
+  :hover {
+    background-color: green;
+    color: green;
+    transition: all 0.2s ease-in-out;
+  }
+`;
